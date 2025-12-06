@@ -11,6 +11,6 @@ class TopicForm(forms.ModelForm):
 class EntryForm(forms.ModelForm):
     class Meta:
         model = Entry
-        fields = ['text']
+        fields = ['text', 'media_file']
         labels = {'text': ''}
-        widgets = {'text': forms.Textarea(attrs={'cols': 80})}
+        widgets = {'text': forms.Textarea(attrs={'cols': 80}), 'media_file': forms.ClearableFileInput()}

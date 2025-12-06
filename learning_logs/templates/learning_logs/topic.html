@@ -16,6 +16,11 @@
   <ul>
     {% for entry in entries %}
       <div class="card mb-3">
+        {% if entry.media_file %}
+        <div class="entry-media">
+          <img src="{{ entry.media_file.url }}" alt="Entry Image" style="max-width: 100%;">
+        </div>
+      {% endif %}
       <!-- Card header with timestamp and edit link -->
       <h4 class="card-header">
         {{ entry.date_added|date:'M d, Y H:i' }}
